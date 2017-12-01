@@ -1,0 +1,6 @@
+body {
+	@include backImage('../images/bg.jpg');
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}

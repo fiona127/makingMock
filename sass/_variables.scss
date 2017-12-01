@@ -1,0 +1,45 @@
+
+@include border-box-sizing;
+
+$susy: (
+	columns: 12,
+	container: 60em,
+	gutters: 1/4, 
+	gutter-position: inside
+);
+
+$narrow: 400px;
+$small: 650px;
+$medium: 960px;
+$wide: 1200px;
+
+//Add Color Palette
+$basicBlue		: #08A3EA;
+$darkBlue		: #1378C3;
+$lightBlue		: #8EBDDF;
+$basicGrey		: #444A4F;
+$black			: #000000;
+$light			: #FFFFFF;
+$cyan			: #B0EFF1;
+$lightpurp		: #DCB0F1;
+
+$backgroundColor: $basicBlue;
+$typeDefault	: $black;
+$navBackground	: $basicGrey;
+$navForeground	: $lightBlue;
+$navHover		: $cyan;
+$navBrandBg		: $light;
+$headersubgb	: $black;
+
+//Font variables
+$fontfamily : Helvetica, Arial, sans-serif;
+
+$thin	: 200;
+$normal	: 400;
+$bold	: 600;
+$heavy	: 800;
+
+$headFont	: $thin 1.5em/1.5em $fontfamily;
+$mainFont	: $thin 1em/1.5em $fontfamily;
+$headColor	: $cyan;
+
