@@ -1,0 +1,27 @@
+#wrapper{
+	.scene{
+		background: $basicGrey;
+		article {
+			text-align: center;
+			//@include container(70%);
+			//@include breakpoint($small) {
+			//	@include container(40em);
+			//	padding: 60px 0;
+			//}
+		}
+	
+		h1 {
+			font-weight: normal;
+			line-height: 100%;
+			color: $lightpurp;
+			padding: 10px 0;
+		}
+	}
+	.contain{
+		display: none;
+		background: $basicGrey;
+		padding: 10px 10px;
+		border-top: none;
+	}
+
+}

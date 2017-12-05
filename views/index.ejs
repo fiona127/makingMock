@@ -9,16 +9,57 @@
         <link rel="icon" href="http://florical.com/themes/framework/favicon.ico">
     </head>
     <body>
-        <header>
+        <header id="home">
             <h1>Florical Systems</h1>
             <nav id="nav">
                 <div class="navbar">
-                    <button>Florical Systems</button>
-                    <button>Download 1</button>
-                    <button>Download 2</button>
-                    <button>Download 3</button>
+                    <button class="tablink" onclick="changeTab(event, 'tab1')">Florical Systems</button>
+                    <button class="tablink" onclick="changeTab(event, 'tab2')">Download 1</button>
+                    <button class="tablink" onclick="changeTab(event, 'tab3')">Download 2</button>
+                    <button class="tablink" onclick="changeTab(event, 'tab4')">Download 3</button>
                 </div>
             </nav>
+            <main id="wrapper">
+                <div id="tab1" class="scene contain">
+                    <article>
+                        <div id="root"><%- content -%></div>
+                    </article>
+                </div>
+                <div class="scene contain" id="tab2">
+                    <article>
+                        <h1> Download Thing 1</h1>
+                    </article>
+                </div>
+                <div class="scene contain" id="tab3">
+                    <article>
+                        <h1>Download Thing 2</h1>
+                    </article>
+                </div>
+                <div class="scene contain" id="tab4">
+                    <article>
+                        <h1>Download Thing 3</h1>
+                    </article>
+                </div>
+            </main>
         </header>
+        <script src="/bundle.js" charset="utf-8"></script>
+        <script type="text/javascript">
+			function changeTab(evt, tabid){
+				var i, tabcontent, tablinks;
+
+				tabcontent = document.getElementsByClassName("contain");
+				for (i=0; i < tabcontent.length; i++){
+					tabcontent[i].style.display = "none";
+				}
+
+				tablinks = document.getElementsByClassName("tablink");
+				for (i=0; i<tablinks.length; i++){
+					tablinks[i].className = tablinks[i].className.replace(" active","");
+				}
+
+				document.getElementById(tabid).style.display = "block";
+				evt.currentTarget.className +=" active";
+			}	
+		</script>
     </body>
 </html>

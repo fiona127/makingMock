@@ -1,0 +1,99 @@
+body {
+  position: absolute;
+  width: 100%;
+  height: 100%; }
+
+body {
+  font: 200 1em/1.5em Helvetica, Arial, sans-serif;
+  background: #A9CCE3;
+  color: #000000; }
+
+article {
+  font: 200 1em/1.5em Helvetica, Arial, sans-serif; }
+
+headings() {
+  font: 200 1.5em/1.5em Helvetica, Arial, sans-serif;
+  color: #B0EFF1;
+  font-weight: 600; }
+
+strong {
+  font-weight: 600; }
+
+p {
+  font-weight: 200;
+  padding-bottom: 10px; }
+
+header .fullheight .bgroup {
+  padding: 100px 0; }
+  header .fullheight .bgroup h1 {
+    color: #FFFFFF;
+    font-size: 5em;
+    font-weight: 800;
+    line-height: .8em;
+    text-align: center; }
+  header .fullheight .bgroup h2 {
+    display: block;
+    color: #FFFFFF;
+    width: 60%;
+    max-width: 200px;
+    margin: 0 auto;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    font-size: 1.3em; }
+  header .fullheight .bgroup p {
+    text-align: center; }
+    header .fullheight .bgroup p img {
+      padding-top: 50px;
+      max-width: 50px; }
+
+header #nav {
+  width: 100%; }
+  header #nav .navbar {
+    overflow: hidden; }
+    header #nav .navbar .brand {
+      float: left;
+      font-weight: bold;
+      font-family: 200 1.5em/1.5em Helvetica, Arial, sans-serif;
+      text-align: center;
+      text-transform: uppercase;
+      background: #FFFFFF; }
+      header #nav .navbar .brand a {
+        color: #8EBDDF;
+        text-decoration: none;
+        text-align: center;
+        display: inline-block;
+        padding: 10px 10px 10px 10px;
+        font-size: 1.5em; }
+    header #nav .navbar button {
+      color: #000000;
+      font: 200 1em/1.5em Helvetica, Arial, sans-serif;
+      font-size: 1em;
+      display: inline-block;
+      padding: 10px 10px 10px 10px;
+      text-decoration: none;
+      border: none;
+      background-color: #8EBDDF;
+      outline: none;
+      cursor: pointer;
+      transition: 0.3s; }
+      header #nav .navbar button:hover {
+        background-color: #B0EFF1;
+        color: #A9CCE3; }
+      header #nav .navbar button .active {
+        background-color: #DCB0F1; }
+
+#wrapper .scene {
+  background: #D5DBDB; }
+  #wrapper .scene article {
+    text-align: center; }
+  #wrapper .scene h1 {
+    font-weight: normal;
+    line-height: 100%;
+    color: #DCB0F1;
+    padding: 10px 0; }
+
+#wrapper .contain {
+  display: none;
+  background: #D5DBDB;
+  padding: 10px 10px;
+  border-top: none; }

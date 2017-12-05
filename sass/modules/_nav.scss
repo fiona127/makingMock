@@ -1,0 +1,65 @@
+header #nav{
+	//@include clearfix;
+	//@include background-image(linear-gradient( top, lighten($navBackground, 10) $navBackground));
+	width: 100%;
+
+	.navbar {
+		//@include container;
+		overflow: hidden;
+
+		.brand{
+			float			: left;
+			font-weight		: bold;
+			font-family		: $headFont;
+			text-align		: center;
+			text-transform	: uppercase;
+			background 		: $navBrandBg;
+			a {
+				color			: $navForeground;
+				text-decoration : none;
+				text-align 		: center;
+				display  		: inline-block; 
+				padding			: 10px 10px 10px 10px;
+				font-size		: 1.5em;
+
+				//@include breakpoint(max-width $small){
+				//	font-size: 1.2 em;
+				//	span{display:none};
+				//}
+			}//a
+		}// brand
+		button {
+			//@include span(8 at 4 of 12);
+			
+			//float: left;
+			color: $black;
+			font: $mainFont;
+			font-size: 1em;
+			display: inline-block;
+			padding: 10px 10px 10px 10px;
+			text-decoration: none;
+			border: none;
+			background-color: $navForeground;
+			outline: none;
+			cursor: pointer;
+			transition: 0.3s;
+
+			&:hover{
+				background-color: $navHover;
+				color: $basicBlue;
+			}
+
+			.active{
+				background-color: $lightpurp;
+			}
+
+			//@include breakpoint(0 $small){
+			//	padding: 10px 18px;
+			//	&::after {
+			//		content: '\000a0';
+			//		display: block;
+			//	}
+			//}				
+		}//button
+	}//navbar
+}//header
