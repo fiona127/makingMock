@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 import Header from './Header';
 import NamePreview from './NamePreview';
+import Greetings from './Greetings';
 
 class App extends React.Component {
     state = {
@@ -15,8 +16,11 @@ class App extends React.Component {
                 <Header message={this.state.pageHeader} />
                 <div>
                     {this.props.names.map(name =>
-                        <NamePreview {...name}/>
+                        <NamePreview key={name.id} {...name}/>
                     )}
+                </div>
+                <div>
+                    <Greetings isLoggedIn={true}/>
                 </div>
             </div>
         );
