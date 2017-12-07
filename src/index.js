@@ -5,10 +5,17 @@ import ReactDOM from 'react-dom';
 import Header from './components/Header';
 import App from './components/App';
 import data from './testData';
-
-console.log(data);
+import FirstTab from './components/FirstTab';
 
 ReactDOM.render(
-    <App names={data.names} />,
+    <App initialData={window.initialData}/>,
     document.getElementById('root')
 );
+
+ReactDOM.render(
+    <FirstTab />,
+    document.getElementById('tab2rt')
+);
+
+
+

@@ -2,16 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 
-function UserGreetings(list) {
+function UserGreetings(log) {
     return <h1>Welcome user</h1>;
 };
 
-function GuestGreetings(list) {
+function GuestGreetings(log) {
     return null;
 };
 
-function Greetings(list) {
-    const isLoggedIn = list.isLoggedIn;
+function Greetings(log) {
+    const isLoggedIn = log.isLoggedIn;
     if (isLoggedIn) {
         return <UserGreetings />;
     }

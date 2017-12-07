@@ -9,25 +9,27 @@
         <link rel="icon" href="http://florical.com/themes/framework/favicon.ico">
     </head>
     <body>
-        <header id="home">
-            <h1>Florical Systems</h1>
-            <nav id="nav">
-                <div class="navbar">
-                    <button class="tablink" onclick="changeTab(event, 'tab1')">Florical Systems</button>
-                    <button class="tablink" onclick="changeTab(event, 'tab2')">Download 1</button>
-                    <button class="tablink" onclick="changeTab(event, 'tab3')">Download 2</button>
-                    <button class="tablink" onclick="changeTab(event, 'tab4')">Download 3</button>
-                </div>
-            </nav>
+        <div id="all">
+            <header id="home">
+                <h1>Florical Systems</h1>
+                <nav id="nav">
+                    <div class="navbar">
+                        <button class="tablink" onclick="changeTab(event, 'tab1')">Florical Systems</button>
+                        <button class="tablink" onclick="changeTab(event, 'tab2')">Download 1</button>
+                        <button class="tablink" onclick="changeTab(event, 'tab3')">Download 2</button>
+                        <button class="tablink" onclick="changeTab(event, 'tab4')">Download 3</button>
+                    </div>
+                </nav>
+            </header>
             <main id="wrapper">
                 <div id="tab1" class="scene contain">
                     <article>
-                        <div id="root"><%- content -%></div>
+                        <div id="root"><%- initialMarkup -%></div>
                     </article>
                 </div>
                 <div class="scene contain" id="tab2">
                     <article>
-                        <h1> Download Thing 1</h1>
+                        <div id="tab2rt"></div>
                     </article>
                 </div>
                 <div class="scene contain" id="tab3">
@@ -41,7 +43,10 @@
                     </article>
                 </div>
             </main>
-        </header>
+        </div>
+        <script type="text/javascript">
+            window.initialData = <%- JSON.stringify(initialData) -%>
+        </script>
         <script src="/bundle.js" charset="utf-8"></script>
         <script type="text/javascript">
 			function changeTab(evt, tabid){
