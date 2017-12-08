@@ -1,10 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types'; 
+import PropTypes from 'prop-types';
 
 const Header = ({message}) => {
     return (
-        <h2 className="text-center">
+        <h2 className ="Header text-center">
             {message}
         </h2>
     );
@@ -14,5 +13,5 @@ Header.propTypes = {
     message: PropTypes.string
 };
 
-
 export default Header;
+
