@@ -8,31 +8,31 @@ import App from './src/components/App';
 import config from './config';
 import axios from 'axios';
 
-const getApiUrl = (nameId) => {
-    if(nameId){
-        return `${config.serverUrl}/api/names/${nameId}`;
+const getApiUrl = (userId) => {
+    if(userId){
+        return `${config.serverUrl}/api/users/${userId}`;
     }
-    return `${config.serverUrl}/api/names`
+    return `${config.serverUrl}/api/users`
 };
 
-const getInitialData = (nameId, apiData) => {
-    if(nameId) {
+const getInitialData = (userId, apiData) => {
+    if(userId) {
         return{
-            currentNameId: apiData.id,
-            names: {
+            currentUserId: apiData.id,
+            users: {
                 [apiData.id]: apiData
             }
         }
     }
     return {
-        names: apiData.names
+        users: apiData.users
     }
 }
 
-const serverRender = (nameId) => 
-    axios.get(getApiUrl(nameId))
+const serverRender = (userId) => 
+    axios.get(getApiUrl(userId))
         .then(resp => {
-            const initialData = getInitialData(nameId, resp.data);
+            const initialData = getInitialData(userId, resp.data);
             return {
                 initialMarkup: ReactDOMServer.renderToString(
                     <App initialData={initialData}/>

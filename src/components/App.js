@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 
 //import {HeaderM} from './Header';
 import Header from './Header';
-import NameList from './NameList';
+import UserList from './UserList';
 import Greetings from './Greetings';
-import Name from './Name';
+import User from './User';
 import * as api from '../api';
 
 const pushState = (obj, url) => {
@@ -25,58 +25,58 @@ class App extends React.Component {
     componentDidMount() {
         onPopState((event) => {
             this.setState({
-                currentNameId: (event.state || {}).currentNameId
+                currentUserId: (event.state || {}).currentUserId
             })
         })
     }
     componentWillUnmount(){
         onPopState(null);
     }
-    fetchName = (nameId) => {
+    fetchUser = (userId) => {
         pushState(
-            {currentNameId: nameId},
-            `/names/${nameId}`
+            {currentUserId: userId},
+            `/users/${userId}`
         );
-        api.fetchName(nameId).then(name => {
+        api.fetchUser(userId).then(user => {
             this.setState({
-                currentNameId: name.id,
-                names: {
-                    ...this.state.names,
-                    [name.id]: name
+                currentUserId: user.id,
+                users: {
+                    ...this.state.users,
+                    [user.id]: user
                 }
             });
         });
     };
-    fetchNameList = () => {
+    fetchUserList = () => {
         pushState(
-            {currentNameId: null},
+            {currentUserId: null},
             `/`
         );
-        api.fetchNameList().then(names => {
+        api.fetchUserList().then(users => {
             this.setState({
-                currentNameId: null,
-                names
+                currentUserId: null,
+                users
             });
         });
     }; 
-    currentName() {
-        return this.state.names[this.state.currentNameId];
+    currentUser() {
+        return this.state.users[this.state.currentUserId];
     }
     pageHeader() {
-        if (this.state.currentNameId) {
-            return this.currentName().fullName;
+        if (this.state.currentUserId) {
+            return this.currentUser().fullName;
         }
-        return 'All the Names';
+        return 'All the Users';
     }
     currentContent() {
-        if (this.state.currentNameId){
-            return <Name 
-                nameListClick={this.fetchNameList}
-                {...this.state.names[this.state.currentNameId]}/>;
+        if (this.state.currentUserId){
+            return <User 
+                userListClick={this.fetchUserList}
+                {...this.state.users[this.state.currentUserId]}/>;
         }
-        return <NameList 
-                    onNameClick={this.fetchName}
-                    names={this.state.names} />; 
+        return <UserList 
+                    onUserClick={this.fetchUser}
+                    users={this.state.users} />; 
     }
     render(){
         return (

@@ -1,11 +1,11 @@
 import axios from 'axios';
 
-export const fetchName = (nameId) => {
-    return axios.get(`/api/names/${nameId}`)
+export const fetchUser = (userId) => {
+    return axios.get(`/api/users/${userId}`)
                 .then(resp => resp.data)
 };
 
-export const fetchNameList = () => {
-    return axios.get('/api/names')
-                .then(resp => resp.data.names);
+export const fetchUserList = () => {
+    return axios.get('/api/users')
+                .then(resp => resp.data.users);
 }

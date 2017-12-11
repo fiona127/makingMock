@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 
 import App from './components/App';
-import data from './testData';
 import FirstTab from './components/FirstTab';
 
 ReactDOM.render(
