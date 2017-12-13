@@ -11,8 +11,6 @@ MongoClient.connect(config.mongodbUri, (err, db) => {
 
 const router = express.Router();
 
-
-
 router.get('/users', (req, res) => {
     let users = {};
     mdb.collection('users').find({})

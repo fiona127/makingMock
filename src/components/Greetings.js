@@ -7,7 +7,7 @@ function UserGreetings(log) {
 };
 
 function GuestGreetings(log) {
-    return null;
+    return <h1> Sign in </h1>;
 };
 
 function Greetings(log) {

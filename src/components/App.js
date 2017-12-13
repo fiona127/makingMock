@@ -50,7 +50,7 @@ class App extends React.Component {
     fetchUserList = () => {
         pushState(
             {currentUserId: null},
-            `/`
+            (`/`, `/#home`)
         );
         api.fetchUserList().then(users => {
             this.setState({

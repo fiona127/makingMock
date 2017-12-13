@@ -24,6 +24,7 @@
     "compass-middleware": "0.0.3",
     "ejs": "^2.5.7",
     "express": "^4.16.2",
+    "jquery": "^3.2.1",
     "json-loader": "^0.5.7",
     "mongodb": "^2.2.33",
     "node-sass-middleware": "^0.11.0",
@@ -31,7 +32,6 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-transition-group": "^2.2.1",
-    "reactstrap": "^4.8.0",
     "susy": "^3.0.1"
   },
   "devDependencies": {

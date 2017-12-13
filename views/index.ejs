@@ -7,37 +7,43 @@
         <title>Mock Florical Website</title>
         <link rel="stylesheet" href="/style.css">
         <link rel="icon" href="http://florical.com/themes/framework/favicon.ico">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
     </head>
     <body>
-        <div id="all">
-            <header id="home">
+        <div class="container">
+            <header>
                 <h1>Florical Systems</h1>
-                <nav id="nav">
-                    <div class="navbar">
-                        <button class="tablink" onclick="changeTab(event, 'tab1')">Florical Systems</button>
-                        <button class="tablink" onclick="changeTab(event, 'tab2')">Download 1</button>
-                        <button class="tablink" onclick="changeTab(event, 'tab3')">Download 2</button>
-                        <button class="tablink" onclick="changeTab(event, 'tab4')">Download 3</button>
-                    </div>
-                </nav>
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#home">Home</a></li>
+                    <li><a href="#tab2">Menu 1</a></li>
+                    <li><a href="#tab3">Menu 2</a></li>
+                    <li><a href="#tab4">Menu 3</a></li>
+                </ul>
             </header>
-            <main id="wrapper">
-                <div id="tab1" class="scene contain">
+            <main class="tab-content">
+                <div id="home" class="tab-pane fade in active">
                     <article>
-                        <div id="root"><%- initialMarkup -%></div>
+                        <div>
+                            <div id="root"><%- initialMarkup -%></div>
+                        </div>
                     </article>
                 </div>
-                <div class="scene contain" id="tab2">
+                <div class="tab-pane fade" id="tab2">
                     <article>
+                        <h1>I'm alright how are you</h1>
                         <div id="tab2rt"></div>
                     </article>
                 </div>
-                <div class="scene contain" id="tab3">
+                <div class="tab-pane fade" id="tab3">
                     <article>
                         <h1>Download Thing 2</h1>
                     </article>
                 </div>
-                <div class="scene contain" id="tab4">
+                <div class="tab-pane fade" id="tab4">
                     <article>
                         <h1>Download Thing 3</h1>
                     </article>
@@ -48,23 +54,13 @@
             window.initialData = <%- JSON.stringify(initialData) -%>
         </script>
         <script src="/bundle.js" charset="utf-8"></script>
-        <script type="text/javascript">
-			function changeTab(evt, tabid){
-				var i, tabcontent, tablinks;
-
-				tabcontent = document.getElementsByClassName("contain");
-				for (i=0; i < tabcontent.length; i++){
-					tabcontent[i].style.display = "none";
-				}
-
-				tablinks = document.getElementsByClassName("tablink");
-				for (i=0; i<tablinks.length; i++){
-					tablinks[i].className = tablinks[i].className.replace(" active","");
-				}
-
-				document.getElementById(tabid).style.display = "block";
-				evt.currentTarget.className +=" active";
-			}	
-		</script>
+        <script>
+            $(document).ready(function(){
+                $(".nav-tabs a").click(function(){
+                    $(this).tab('show');
+                });
+            });
+        </script>
+        
     </body>
 </html>
